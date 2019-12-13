@@ -14,6 +14,8 @@
 
 #include <zmq.hpp>
 
+#include <Hits.h>
+
 /**
 * \class DataModel
  *
@@ -44,6 +46,8 @@ class DataModel {
   Logging *Log; ///< Log class pointer for use in Tools, it can be used to send messages which can have multiple error levels and destination end points  
 
   zmq::context_t* context; ///< ZMQ contex used for producing zmq sockets for inter thread,  process, or computer communication
+
+  Hits* hits;
 
 
  private:

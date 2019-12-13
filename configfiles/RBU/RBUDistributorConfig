@@ -1,0 +1,4 @@
+#RBUDistributor Config file
+
+numhits 1000
+Processor_port 66666

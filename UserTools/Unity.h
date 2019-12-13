@@ -1,1 +1,7 @@
 #include "DummyTool.h"
+#include "FEESimData.h"
+#include "HitsSend.h"
+#include "HitsReceive.h"
+#include "RBUDistributor.h"
+#include "ProcessorNhits.h"
+#include "EBUSave.h"

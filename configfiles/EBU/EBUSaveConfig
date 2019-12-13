@@ -1,0 +1,5 @@
+#EBUSave Config file
+
+output_path ./
+output_file Data
+file_size 10000;

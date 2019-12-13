@@ -1,0 +1,4 @@
+#HitsSend config file
+
+Port 7777
+Endpoint ProcessedData

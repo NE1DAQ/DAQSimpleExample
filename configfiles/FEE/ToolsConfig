@@ -1,0 +1,4 @@
+#test1 DummyTool configfiles/DummyToolConfig
+#test2 DummyTool configfiles/DummyToolConfig
+FEESimData FEESimData configfiles/FEE/FEESimDataConfig
+HitsSend HitsSend configfiles/FEE/HitsSendConfig

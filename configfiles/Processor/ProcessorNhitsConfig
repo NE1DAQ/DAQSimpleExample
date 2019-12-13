@@ -1,0 +1,4 @@
+# ProcessorNhits Config file
+
+threshold 50.0;
+numhits 600

@@ -1,0 +1,4 @@
+#HitsSend Config file
+
+Port 5555
+Endpoint FEEData

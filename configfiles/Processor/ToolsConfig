@@ -1,0 +1,5 @@
+#test1 DummyTool configfiles/DummyToolConfig
+#test2 DummyTool configfiles/DummyToolConfig
+HitsReceive HitsReceive configfiles/Processor/HitsReceiveConfig
+ProcessorNhits ProcessorNhits configfiles/Processor/ProcessorNhitsConfig
+HitsSend HitsSend configfiles/Processor/HitsSendConfig
