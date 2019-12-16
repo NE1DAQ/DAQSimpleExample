@@ -10,13 +10,13 @@ class Hit: public SerialisableObject{
  public:
 
   Hit();  
+  //  ~Hit(); 
   Hit(float timein, float chargein, int idin);
+  bool Print(){};
 
   float time;
   float charge;
   int id;
-
-  bool Print(){};
 
  private:
 

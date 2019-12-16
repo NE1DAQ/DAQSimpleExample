@@ -35,6 +35,7 @@ bool ProcessorNhits::Execute(){
 	m_data->hits->hits.erase(remove.at(i));
       }
     }
+
   }
   
   return true;

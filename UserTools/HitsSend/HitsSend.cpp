@@ -35,12 +35,16 @@ bool HitsSend::Initialise(std::string configfile, DataModel &data){
 
 bool HitsSend::Execute(){
 
-  if(m_data->hits->hits.size()>0){
-    zmq::poll(&items[0], 1, 100);
-    
-    if ((items [0].revents & ZMQ_POLLOUT)) {
+  if(m_data->hits!=0){
+    if(m_data->hits->hits.size()>0){
+      zmq::poll(&items[0], 1, 100);
       
-      m_data->hits->Send(sock);
+      if ((items [0].revents & ZMQ_POLLOUT)) {
+
+	m_data->hits->Send(sock);
+	m_data->hits=0;
+
+      }
     }
   }
 

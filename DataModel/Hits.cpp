@@ -10,10 +10,16 @@ void cleanup (void *data, void *hint) {
 
 Hits::Hits(){};
 
+//Hits::~Hits(){
+
+//  hits.clear();
+  
+//};
+
 bool Hits::Send(zmq::socket_t* sock){
 
   bool ret=false;
-  zmq::message_t message(&(hits.at(0)), sizeof(Hit)*hits.size(), cleanup, this);
+  zmq::message_t message(&hits[0], sizeof(Hit)*hits.size(), cleanup, this);
   ret=sock->send(message);
 
   return ret;

@@ -60,12 +60,15 @@ bool EBUSave::Initialise(std::string configfile, DataModel &data){
 
 bool EBUSave::Execute(){
 
+  std::cout<<m_data->hits->hits.size()<<" : "<<filesize<<std::endl;
   if(m_data->hits->hits.size()>=filesize){
 
     zmq::poll(&items[0], 1, 0);
     
     if ((items [0].revents & ZMQ_POLLOUT)) {
+
       if(m_util->SendPointer(sock,m_data->hits)) m_data->hits=new Hits();
+
     }
     
   }
@@ -102,6 +105,7 @@ void EBUSave::Thread(Thread_args* arg){
     std::stringstream out;
     out<<args->outpath << args->outfile << "p" << args->filecount;
     file.Set("Hits",tmp);
+   
     file.Save(out.str());
     args->filecount++;
 

@@ -13,10 +13,13 @@ class Hits : public SerialisableObject{
  public:
 
   Hits();
+  //  ~Hits();
   bool Send(zmq::socket_t* sock);
   bool Receive(zmq::socket_t* sock);
-  std::vector<Hit> hits; 
   bool Print(){};
+
+  std::vector<Hit> hits; 
+  
 
  private:
 

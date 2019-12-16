@@ -24,13 +24,17 @@ bool FEESimData::Execute(){
   
   if( m_data->hits==0) m_data->hits =new Hits();
   
-  for (int i=0; i<numhits;i++){
+  if(m_data->hits->hits.size()<10000){
+
+    for (int i=0; i<numhits;i++){
+      
+      Hit tmp(rand()% 10000 +1 ,(rand() % 10000 + 1)/100.00, (rand() % 100 +1));
+      
+      m_data->hits->hits.push_back(tmp); // this is a crappy coppy but could easily be done without but no point for a demo 
+      
+    }
     
-    Hit tmp(rand()/100.00 ,(rand() % 10000 + 1)/100.00, (rand() % 100 +1));
-    
-    m_data->hits->hits.push_back(tmp); // this is a crappy coppy but could easily be done without but no point for a demo 
- 
- }
+  }
   
   return true;
 }
@@ -38,9 +42,13 @@ bool FEESimData::Execute(){
 
 bool FEESimData::Finalise(){
 
-  m_data->hits->hits.clear();
-  delete  m_data->hits;
-  m_data->hits=0;
-
+  if( m_data->hits!=0){
+  
+    m_data->hits->hits.clear();
+    delete  m_data->hits;
+    m_data->hits=0;
+  
+  }
+  
   return true;
 }

@@ -11,7 +11,7 @@ if (tool=="HitsSend") ret=new HitsSend;
 if (tool=="HitsReceive") ret=new HitsReceive;
 if (tool=="RBUDistributor") ret=new RBUDistributor;
 if (tool=="ProcessorNhits") ret=new ProcessorNhits;
-  if (tool=="EBUSave") ret=new EBUSave;
+if (tool=="EBUSave") ret=new EBUSave;
 return ret;
 }
 
